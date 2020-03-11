@@ -37,7 +37,7 @@ gulp.task("sass", done => {
 });
 gulp.task("babel", done => {
     gulp.src("js/*.js")
-        .pipe(babel({ presets: ['@babel/evn'] }))
+        //.pipe(babel({ presets: ["@babel/evn"] }))
         .pipe(gulp.dest("dist/js"))
         .pipe(connect.reload());
     done();
