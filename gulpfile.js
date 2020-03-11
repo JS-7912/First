@@ -1,7 +1,8 @@
 const gulp = require("gulp");
 const sass = require("gulp-sass");
 const connect = require("gulp-connect");
-const sourcemaps = require("gulp-sourcemaps")
+const sourcemaps = require("gulp-sourcemaps");
+const babel = require("gulp-babel");
 
 
 //创建服务器
@@ -34,12 +35,26 @@ gulp.task("sass", done => {
         .pipe(connect.reload());
     done();
 });
+gulp.task("babel", done => {
+    gulp.src("js/*.js")
+        .pipe(babel({ presets: ['@babel/evn'] }))
+        .pipe(gulp.dest("dist/js"))
+        .pipe(connect.reload());
+    done();
+});
+gulp.task("libs", done => {
+    gulp.src("libs/*.js")
+        .pipe(gulp.dest("dist/libs"));
+    done();
+});
 gulp.task("watch", done => {
     gulp.watch("*.html", gulp.series("copyIndex"));
-    gulp.watch("sass/*.scss", gulp.series("sass"));
     gulp.watch("img/**", gulp.series("copyImg"));
+    gulp.watch("sass/*.scss", gulp.series("sass"));
+    gulp.watch("js/*.js", gulp.series("babel"));
+    gulp.watch("libs/*.js", gulp.series("libs"));
     done();
 });
 
 //默认任务
-gulp.task("default", gulp.series("watch", "server"));
+gulp.task("default", gulp.parallel("watch", "server"));
