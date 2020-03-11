@@ -1,5 +1,151 @@
-body {
-    font-style: 20px;
-    color: blue;
-    font-weight: bold;
+$r: 0.81; //比例
+.w {
+    width: 1490px*$r;
+    margin: 0 auto;
+}
+
+.sty_red {
+    color: red;
+}
+
+@mixin hover {
+    &:hover {
+        color: red;
+    }
+}
+
+
+/* 快捷导航模块 */
+
+nav {
+    .top {
+        img {
+            width: 100%;
+        }
+    }
+    .nav {
+        height: 30px;
+        line-height: 30px;
+        background: #e3e4e5;
+        margin-top: -3px;
+    }
+    .nav_left {
+        float: left;
+    }
+    .nav_right {
+        float: right;
+    }
+    ul {
+        li {
+            float: left;
+        }
+        li:nth-child(even) {
+            width: 1px;
+            height: 12px;
+            background-color: #999;
+            margin: 9px 15px 0;
+        }
+        a {
+            color: #999999;
+            @include hover();
+        }
+    }
+}
+
+
+/* 头部搜索模块 */
+
+header {
+    .logo {
+        float: left;
+        width: 238px*$r;
+        height: 175px*$r;
+        img {
+            width: 190px*$r;
+            height: 120px*$r;
+            margin-top: 31px*$r;
+            margin-left: 15px*$r;
+        }
+    }
+    .centre-h {
+        float: left;
+        width: 1012px*$r;
+        height: 175px*$r;
+        .search {
+            width: 875px*$r;
+            height: 70px*$r;
+            margin-top: 32px*$r;
+            margin-left: 88px*$r;
+            .search-t {
+                .search-m {
+                    float: left;
+                    input {
+                        width: 605px*$r;
+                        height: 45px*$r;
+                        border: 3px*$r solid red;
+                    }
+                    button {
+                        width: 73px*$r;
+                        height: 45px*$r;
+                        background: red;
+                        border: 0;
+                        margin-left: -4px;
+                    }
+                }
+                .shopcar {
+                    float: left;
+                    width: 165px*$r;
+                    height: 45px*$r;
+                    line-height: 45px*$r;
+                    text-align: center;
+                    border: 1px solid #eee;
+                    color: red;
+                    margin-left: 23px*$r;
+                }
+                .search-b {
+                    float: left;
+                    margin-top: 11px*$r;
+                    margin-right: 13px*$r;
+                    a {
+                        color: #9d9d9d;
+                        margin-right: 12px*$r;
+                        @include hover();
+                    }
+                    .sty_red {
+                        color: red;
+                    }
+                }
+            }
+        }
+        .navitems {
+            height: 50px*$r;
+            margin-top: 24px*$r;
+            line-height: 50px*$r;
+            ul {
+                height: 20px*$r;
+                margin: 15px*$r 0px;
+                .hot {
+                    a {
+                        color: red;
+                        font-weight: bold;
+                    }
+                }
+                li {
+                    float: left;
+                    margin-left: 30px*$r;
+                    a {
+                        font-size: 18px*$r;
+                        @include hover();
+                    }
+                }
+            }
+        }
+    }
+    .right-h {
+        img {
+            width: 240px*$r;
+            height: 175px*$r;
+        }
+        float: left;
+    }
 }
