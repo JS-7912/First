@@ -72,7 +72,19 @@ oSliderBox.onmouseover = function() {
     }
     //开定时器，在鼠标移出轮播区域的时候
 oSliderBox.onmouseout = function() {
-    timer = setInterval(function() {
-        move();
-    }, 3000)
-}
+        timer = setInterval(function() {
+            move();
+        }, 3000)
+    }
+    //轮播区域结束
+
+//取消字段选择功能
+document.onselectstart = function() { return false; };
+
+
+$(function() {
+    //点击X关闭最上面那个
+    $(".top-btn").click(function() {
+        $(".top").remove();
+    })
+})
