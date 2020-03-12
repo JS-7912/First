@@ -1,0 +1,240 @@
+$r: 0.81; //比例
+.w {
+    width: 1490px*$r;
+    margin: 0 auto;
+}
+
+@mixin iconfont {
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    /* project id 1686766 */
+    src: url('//at.alicdn.com/t/font_1686766_nbw75zpxwkd.eot');
+    src: url('//at.alicdn.com/t/font_1686766_nbw75zpxwkd.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1686766_nbw75zpxwkd.woff2') format('woff2'), url('//at.alicdn.com/t/font_1686766_nbw75zpxwkd.woff') format('woff'), url('//at.alicdn.com/t/font_1686766_nbw75zpxwkd.ttf') format('truetype'), url('//at.alicdn.com/t/font_1686766_nbw75zpxwkd.svg#iconfont') format('svg');
+}
+
+.header {
+    border-bottom: 3px solid #f2f2f2;
+    .logo {
+        position: relative;
+        height: 130px*$r;
+        img {
+            width: 178px*$r;
+            height: 55px*$r;
+            margin-top: 35px*$r;
+        }
+        span {
+            font-size: 30px*$r;
+            line-height: 30px*$r;
+            margin-left: 24px*$r;
+            color: #333;
+        }
+        .login {
+            position: absolute;
+            font-size: 20px*$r;
+            float: right;
+            color: #999;
+            right: 0;
+            bottom: 40px*$r;
+            a {
+                color: red;
+                margin-left: 10px*$r;
+                &::after {
+                    content: "\e6ab";
+                    @include iconfont();
+                }
+            }
+        }
+    }
+}
+
+.container {
+    $width: 500px*$r;
+    width: 1513px*$r;
+    height: 741px*$r;
+    margin-top: 105px*$r;
+    border-bottom: 1px solid #e6e6e6;
+    .con-col1 {
+        width: $width;
+        height: 62px*$r;
+        margin-left: 508px*$r;
+        @mixin step {
+            display: block;
+            width: 30px*$r;
+            height: 30px*$r;
+            border-radius: 50%;
+            line-height: 30px*$r;
+            text-align: center;
+            margin-bottom: 20px*$r;
+        }
+        .pro-step1 {
+            float: left;
+            span {
+                @include step();
+                color: #fff;
+                background: #33bb44;
+                margin-left: 22px*$r;
+            }
+            p {
+                color: #33bb44;
+            }
+        }
+        .pro-step2 {
+            float: left;
+            margin-left: 135px*$r;
+            span {
+                @include step();
+                color: #ccc;
+                border: 1px solid #ccc;
+                margin-left: 30px*$r;
+            }
+            p {
+                color: #999;
+            }
+        }
+        .pro-step3 {
+            float: left;
+            margin-left: 135px*$r;
+            span {
+                @include step();
+                color: #ccc;
+                border: 1px solid #ccc;
+                margin-left: 15px*$r;
+            }
+            p {
+                color: #999;
+            }
+        }
+    }
+    .con-col2 {
+        width: $width;
+        height: 64px*$r;
+        line-height: 64px*$r;
+        margin-left: 508px*$r;
+        margin-top: 68px*$r;
+        .phone {
+            float: left;
+            height: 100%;
+            width: 134px*$r;
+            border: 1px solid #ddd;
+            text-align: center;
+            font-size: 17px*$r;
+            color: #666;
+            &::after {
+                content: "\e62d";
+                @include iconfont();
+                font-size: 7px*$r;
+                color: #ccc;
+            }
+        }
+        input {
+            float: left;
+            height: 64px*$r;
+            width: 361px*$r;
+            line-height: 64px*$r;
+            border: 1px solid #ddd;
+            border-left: 0;
+            &::placeholder {
+                font-size: 18px*$r;
+                padding-left: 26px*$r;
+                color: #ccc;
+            }
+        }
+    }
+    .con-col3 {
+        width: $width;
+        height: 64px*$r;
+        line-height: 64px*$r;
+        margin-left: 508px*$r;
+        margin-top: 42px*$r;
+        button {
+            font-size: 18px*$r;
+            width: $width;
+            height: 64px*$r;
+        }
+    }
+    .con-col4 {
+        width: $width;
+        height: 64px*$r;
+        line-height: 64px*$r;
+        margin-left: 508px*$r;
+        margin-top: 65px*$r;
+        button {
+            font-size: 18px*$r;
+            width: $width;
+            height: 64px*$r;
+            background: #f00;
+            border: 0;
+            font-size: 22px*$r;
+            color: #fff;
+        }
+    }
+    .con-col5 {
+        width: $width;
+        height: 64px*$r;
+        line-height: 64px*$r;
+        margin-left: 508px*$r;
+        margin-top: 36px*$r;
+        .enterprise {
+            float: left;
+            font-size: 17px*$r;
+            color: #ccc;
+            &::before {
+                content: "\e602";
+                @include iconfont();
+                font-size: 30px*$r;
+                color: #ccc;
+                margin-right: 12px*$r;
+            }
+        }
+        .overseas {
+            float: right;
+            font-size: 17px*$r;
+            color: #ccc;
+            &::before {
+                content: "\e60e";
+                @include iconfont();
+                font-size: 30px*$r;
+                color: #ccc;
+                margin-right: 12px*$r;
+            }
+        }
+    }
+}
+
+.footer {
+    height: 147px*$r;
+    .links {
+        margin-left: 240px*$r;
+        padding-top: 45px*$r;
+        ul {
+            li {
+                a {
+                    color: #999;
+                }
+                &:hover {
+                    text-decoration: underline;
+                }
+                float: left;
+                &:nth-of-type(even) {
+                    margin: 0 17px*$r;
+                    width: 1px;
+                    height: 15px;
+                    background: #999;
+                    ;
+                }
+            }
+        }
+    }
+    .copyright {
+        padding-top: 50px*$r;
+        margin-left: 609px*$r;
+        color: #999;
+    }
+}
