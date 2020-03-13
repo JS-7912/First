@@ -17,7 +17,7 @@
             <span>欢迎注册</span>
             <div class="login">
                 已有账号?
-                <a href="#">请登录</a>
+                <a href="login.html">请登录</a>
             </div>
         </div>
     </div>
@@ -25,15 +25,15 @@
     <div class="container w">
         <div class="con-col1">
             <div class="pro-step1">
-                <span>1</span>
+                <span class="now-span">1</span>
                 <p>验证手机号</p>
             </div>
             <div class="pro-step2">
-                <span>2</span>
-                <p>填写信息账号</p>
+                <span class="past-span">2</span>
+                <p>填写信息密码</p>
             </div>
             <div class="pro-step3">
-                <span>3</span>
+                <span class="past-span">3</span>
                 <p>注册成功</p>
             </div>
         </div>
@@ -41,13 +41,22 @@
             <div class="phone">
                 <span>中国  0086</span>
             </div>
-            <input type="tel" placeholder="建议使用常用手机号">
+            <input id="telephone" type="tel" placeholder="建议使用常用手机号">
+            <span></span>
         </div>
         <div class="con-col3">
-            <button>点击按钮进行验证</button>
+            <button id="col3-btn">点击按钮进行验证</button>
+        </div>
+        <!-- 隐藏的密码 -->
+        <div class="con-col23">
+            <div class="psw">
+                <span>密码</span>
+            </div>
+            <input id="password" type="password" placeholder="请输入您要注册的密码">
+            <span></span>
         </div>
         <div class="con-col4">
-            <button>下一步</button>
+            <button id="btn">下一步</button>
         </div>
         <div class="con-col5">
             <div class="enterprise">
@@ -90,5 +99,7 @@
         </div>
     </div>
 </body>
+<script src="libs/jquery-1.11.0.js"></script>
+<script src="js/reg.js"></script>
 
 </html>
