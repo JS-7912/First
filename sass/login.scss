@@ -1,0 +1,284 @@
+     $r: 0.81; //比例
+     .w {
+         width: 1223px*$r;
+         margin: 0 auto;
+     }
+     
+     @mixin iconfont {
+         font-family: "iconfont" !important;
+         font-style: normal;
+         -webkit-font-smoothing: antialiased;
+         -webkit-text-stroke-width: 0.2px;
+         -moz-osx-font-smoothing: grayscale;
+     }
+     
+     @font-face {
+         font-family: 'iconfont';
+         /* project id 1686766 */
+         src: url('//at.alicdn.com/t/font_1686766_4az501jgu02.eot');
+         src: url('//at.alicdn.com/t/font_1686766_4az501jgu02.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1686766_4az501jgu02.woff2') format('woff2'), url('//at.alicdn.com/t/font_1686766_4az501jgu02.woff') format('woff'), url('//at.alicdn.com/t/font_1686766_4az501jgu02.ttf') format('truetype'), url('//at.alicdn.com/t/font_1686766_4az501jgu02.svg#iconfont') format('svg');
+     }
+     
+     .header {
+         .logo {
+             position: relative;
+             height: 100px*$r;
+             img {
+                 width: 178px*$r;
+                 height: 55px*$r;
+                 margin-top: 20px*$r;
+             }
+             span {
+                 font-size: 30px*$r;
+                 line-height: 30px*$r;
+                 margin-left: 24px*$r;
+                 color: #333;
+             }
+             .login {
+                 position: absolute;
+                 font-size: 20px*$r;
+                 float: right;
+                 color: #999;
+                 right: 0;
+                 bottom: 40px*$r;
+                 a {
+                     color: #999;
+                     font-size: 14px*$r;
+                     margin-left: 10px*$r;
+                     &::before {
+                         content: "\e61f";
+                         @include iconfont();
+                         font-size: 18px*$r;
+                         color: #f00;
+                         margin-right: 7px*$r;
+                     }
+                     &:hover {
+                         color: red;
+                         text-decoration: underline;
+                     }
+                 }
+             }
+         }
+         .safe {
+             height: 49px*$r;
+             line-height: 49px*$r;
+             background-color: #fff8f0;
+             padding-left: 465px*$r;
+             color: #999;
+             font-size: 16px*$r;
+             p {
+                 &::before {
+                     content: "\e62b";
+                     @include iconfont();
+                     color: #999;
+                     font-size: 16px*$r;
+                     margin-right: 7px*$r;
+                     vertical-align: middle;
+                 }
+             }
+         }
+     }
+     
+     .container {
+         height: 594px*$r;
+         background-color: #841e08;
+         .main {
+             position: relative;
+             background-image: url(../img/login-img.png);
+             background-size: 1237px*$r 594px*$r;
+             background-repeat: no-repeat;
+             height: 594px*$r;
+             .log-in {
+                 position: absolute;
+                 right: 0px;
+                 top: 13px*$r;
+                 width: 434px*$r;
+                 height: 498px*$r;
+                 background-color: #fff;
+                 .log-col1 {
+                     height: 49px*$r;
+                     line-height: 49px*$r;
+                     background-color: #fff8f0;
+                     text-align: center;
+                     span {
+                         font-size: 16px*$r;
+                         color: #999;
+                         &::before {
+                             content: "\e62b";
+                             @include iconfont();
+                             margin-left: 8px*$r;
+                             color: #bbb;
+                             font-size: 20px*$r;
+                             vertical-align: middle;
+                         }
+                     }
+                 }
+                 .log-col2 {
+                     height: 68px*$r;
+                     line-height: 68px*$r;
+                     text-align: center;
+                     border-bottom: 1px solid #f2f2f2;
+                     p {
+                         font-size: 24px*$r;
+                         color: #f00;
+                         font-weight: bold;
+                     }
+                 }
+                 .log-col3 {
+                     height: 289px*$r;
+                     border-bottom: 1px solid #f2f2f2;
+                     form {
+                         position: relative;
+                         margin-left: 25px*$r;
+                         margin-top: 42px*$r;
+                         .f-div1 {
+                             height: 49px*$r;
+                             width: 382px*$r;
+                             span {
+                                 float: left;
+                                 height: 49px*$r;
+                                 line-height: 49px*$r;
+                                 width: 50px*$r;
+                                 border: 1px solid #bdbdbd;
+                                 text-align: center;
+                                 border-right: 0;
+                                 &::after {
+                                     content: "\e605";
+                                     @include iconfont();
+                                     font-size: 22px*$r;
+                                     color: #d4d4d4;
+                                 }
+                             }
+                             #tel {
+                                 padding-left: 16px*$r;
+                                 height: 49px*$r;
+                                 width: 332px*$r;
+                             }
+                         }
+                         .f-div2 {
+                             padding-top: 25px*$r;
+                             height: 49px*$r;
+                             width: 382px*$r;
+                             span {
+                                 float: left;
+                                 height: 49px*$r;
+                                 line-height: 49px*$r;
+                                 width: 50px*$r;
+                                 border: 1px solid #bdbdbd;
+                                 text-align: center;
+                                 border-right: 0;
+                                 &::after {
+                                     content: "\e774";
+                                     @include iconfont();
+                                     font-size: 22px*$r;
+                                     color: #d4d4d4;
+                                 }
+                             }
+                             #psw {
+                                 padding-left: 16px*$r;
+                                 height: 49px*$r;
+                                 width: 332px*$r;
+                             }
+                         }
+                         a {
+                             position: relative;
+                             right: -265px*$r;
+                             top: 50px*$r;
+                             color: #666;
+                             font-size: 16px*$r;
+                         }
+                         #btn {
+                             height: 42px*$r;
+                             width: 381px*$r;
+                             border: 0;
+                             margin-top: 72px*$r;
+                             background-color: #f00;
+                             color: #fff;
+                             font-size: 24px*$r;
+                         }
+                     }
+                 }
+                 .log-col4 {
+                     height: 50px*$r;
+                     line-height: 50px*$r;
+                     div {
+                         float: left;
+                         margin-left: 26px*$r;
+                         span {
+                             margin: 0 17px*$r;
+                         }
+                         a {
+                             &:hover {
+                                 color: red;
+                             }
+                             &:first-of-type {
+                                 &::before {
+                                     content: "\e6a8";
+                                     @include iconfont();
+                                     font-size: 22px*$r;
+                                     color: #10a8ff;
+                                     margin-right: 6px*$r;
+                                     vertical-align: middle;
+                                 }
+                             }
+                             &:last-of-type {
+                                 &::before {
+                                     content: "\e611";
+                                     @include iconfont();
+                                     font-size: 22px*$r;
+                                     color: #00cc00;
+                                     margin-right: 6px*$r;
+                                     vertical-align: middle;
+                                 }
+                             }
+                         }
+                     }
+                     .reg {
+                         float: right;
+                         margin-right: 26px*$r;
+                         &:hover {
+                             color: red;
+                         }
+                         &::before {
+                             content: "\e601";
+                             @include iconfont();
+                             font-size: 20px*$r;
+                             color: #e4393c;
+                             margin-right: 7px*$r;
+                             vertical-align: middle;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+     
+     .footer {
+         height: 147px*$r;
+         .links {
+             margin-left: 100px*$r;
+             padding-top: 45px*$r;
+             ul {
+                 li {
+                     a {
+                         color: #999;
+                     }
+                     &:hover {
+                         text-decoration: underline;
+                     }
+                     float: left;
+                     &:nth-of-type(even) {
+                         margin: 0 17px*$r;
+                         width: 1px;
+                         height: 15px;
+                         background: #999;
+                     }
+                 }
+             }
+         }
+         .copyright {
+             padding-top: 50px*$r;
+             text-align: center;
+             color: #999;
+         }
+     }

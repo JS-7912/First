@@ -49,6 +49,9 @@ $r: 0.81; //比例
                     content: "\e6ab";
                     @include iconfont();
                 }
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -246,24 +249,36 @@ $r: 0.81; //比例
             float: left;
             font-size: 17px*$r;
             color: #ccc;
+            a {
+                &:hover {
+                    color: #f00;
+                }
+            }
             &::before {
                 content: "\e602";
                 @include iconfont();
                 font-size: 30px*$r;
                 color: #ccc;
                 margin-right: 12px*$r;
+                vertical-align: middle;
             }
         }
         .overseas {
             float: right;
             font-size: 17px*$r;
             color: #ccc;
+            a {
+                &:hover {
+                    color: #f00;
+                }
+            }
             &::before {
                 content: "\e60e";
                 @include iconfont();
                 font-size: 30px*$r;
                 color: #ccc;
                 margin-right: 12px*$r;
+                vertical-align: middle;
             }
         }
     }
