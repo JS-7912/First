@@ -87,4 +87,44 @@ $(function() {
     $(".top-btn").click(function() {
         $(".top").remove();
     })
+
+
+
+
+
+
+    /*//用来删除商品数据
+    $.get("http://jx.xuzhixiang.top/ap/api/goods/goods-delete.php", {
+            pid: "198093",
+            uid: "33192",
+            token: "2d15fcad9bdb31b09b6d452a261cff4d"
+        }).then(data => {
+            console.log(data);
+
+        })*/
+    //用来查询自己的商品 把数据传递给前端
+    $.get("http://jx.xuzhixiang.top/ap/api/productlist.php", {
+        uid: "33192"
+    }).then(data => {
+        console.log(data);
+        data = data.data;
+        var str = "";
+        $.each(data, function(i, val) {
+            str += "<div>" + "<img src=" + val.pimg + ">" + "<p>" + val.pname + "</p>" + "<span>" + "￥" + val.pprice + "</span>" + "</div>";
+        })
+        $(".sk-row2").append($(str));
+    })
+
+    /* //用来插入商品数据
+      $.post("http://jx.xuzhixiang.top/ap/api/goods/goods-add.php", {
+          pname: "洗衣机置物架翻盖波轮洗衣机架落地卫生间马桶置物架子阳台收纳架 B款 白枫色+白架",
+          pprice: 160.00,
+          pimg: "img/pimg10.png",
+          pdesc: "这是一件物美价廉的商品",
+          uid: "33192"
+      }).then(data => {
+          console.log(data);
+      });*/
+
+
 })
