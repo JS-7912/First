@@ -106,13 +106,18 @@ $(function() {
     $.get("http://jx.xuzhixiang.top/ap/api/productlist.php", {
         uid: "33192"
     }).then(data => {
-        console.log(data);
+
         data = data.data;
         var str = "";
-        $.each(data, function(i, val) {
+        var str1 = "";
+        $.each(data, function(n, val) {
             str += "<div>" + "<img src=" + val.pimg + ">" + "<p>" + val.pname + "</p>" + "<span>" + "￥" + val.pprice + "</span>" + "</div>";
         })
         $(".sk-row2").append($(str));
+        $.each(data, function(n, val) {
+            str1 += "<div>" + "<img src=" + val.pimg + ">" + "<p>" + val.pname + "</p>" + "<i>" + "￥" + "</i>" + "<span>" + val.pprice + "</span>" + "</div>";
+        })
+        $(".rec-like").append($(str1));
     })
 
     /* //用来插入商品数据
