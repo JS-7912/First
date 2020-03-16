@@ -88,6 +88,20 @@ $(function() {
         $(".top").remove();
     })
 
+    //列表导航
+    $(".fs-col1 li").mouseover(function() {
+        $(".li1").stop().fadeIn();
+    })
+
+    $(".fs-col1").mouseleave(function() {
+            $(".li1").stop().fadeOut();
+        })
+        // (function() {
+
+    // }, function() {
+    //     $(".li1").stop().fadeOut();
+    // })
+
     //用来查询自己的商品 把数据传递给前端,插入到页面
     $.get("http://jx.xuzhixiang.top/ap/api/productlist.php", {
         uid: "33192"

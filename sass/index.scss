@@ -25,8 +25,8 @@ $r: 0.81; //比例
 @font-face {
     font-family: 'iconfont';
     /* project id 1686766 */
-    src: url('//at.alicdn.com/t/font_1686766_tsa8zvykqcd.eot');
-    src: url('//at.alicdn.com/t/font_1686766_tsa8zvykqcd.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1686766_tsa8zvykqcd.woff2') format('woff2'), url('//at.alicdn.com/t/font_1686766_tsa8zvykqcd.woff') format('woff'), url('//at.alicdn.com/t/font_1686766_tsa8zvykqcd.ttf') format('truetype'), url('//at.alicdn.com/t/font_1686766_tsa8zvykqcd.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_1686766_gvk1wemflsr.eot');
+    src: url('//at.alicdn.com/t/font_1686766_gvk1wemflsr.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1686766_gvk1wemflsr.woff2') format('woff2'), url('//at.alicdn.com/t/font_1686766_gvk1wemflsr.woff') format('woff'), url('//at.alicdn.com/t/font_1686766_gvk1wemflsr.ttf') format('truetype'), url('//at.alicdn.com/t/font_1686766_gvk1wemflsr.svg#iconfont') format('svg');
 }
 
 .warp {
@@ -127,6 +127,7 @@ $r: 0.81; //比例
 /* 快捷导航模块 */
 
 nav {
+    border-bottom: 1px solid #d4d4d4;
     .top {
         position: relative;
         img {
@@ -146,17 +147,51 @@ nav {
         line-height: 30px;
         background: #e3e4e5;
         margin-top: -3px;
-    }
-    .nav_left {
-        cursor: pointer;
-        float: left;
-        span {
-            color: #999;
-            &::before {
-                content: "\e60b";
-                @include iconfont();
-                color: red;
-                margin-left: 10px;
+        .nav_left {
+            position: relative;
+            cursor: pointer;
+            float: left;
+            &:hover {
+                .address {
+                    display: block;
+                }
+            }
+            span {
+                color: #999;
+                &::before {
+                    content: "\e603";
+                    @include iconfont();
+                    color: red;
+                    margin: 0 10px*$r;
+                    font-size: 15px*$r;
+                }
+                &:hover {
+                    color: #f00;
+                }
+            }
+            .address {
+                position: absolute;
+                width: 397px*$r;
+                height: 272px*$r;
+                background-color: #fff;
+                z-index: 5;
+                border: 1px solid #d4d4d4;
+                padding-left: 22px*$r;
+                padding-top: 15px*$r;
+                display: none;
+                .now-address {
+                    font-weight: bold;
+                    color: #000;
+                }
+                a {
+                    float: left;
+                    width: 74px*$r;
+                    height: 34px*$r;
+                    color: #999;
+                    &:hover {
+                        color: #f00;
+                    }
+                }
             }
         }
     }
@@ -164,8 +199,112 @@ nav {
         float: right;
     }
     ul {
+        .myJD {
+            &:hover {
+                .myJD-pull {
+                    display: block;
+                }
+            }
+        }
+        .enterprise {
+            &:hover {
+                .enterprise-pull {
+                    display: block;
+                }
+            }
+        }
+        .serve {
+            &:hover {
+                .serve-pull {
+                    display: block;
+                }
+            }
+        }
         li {
             float: left;
+            position: relative;
+            .myJD-pull {
+                position: absolute;
+                left: -20px*$r;
+                width: 348px*$r;
+                height: 203px*$r;
+                background-color: #fff;
+                z-index: 5;
+                border: 1px solid #d4d4d4;
+                display: none;
+                .myJD-row1,
+                .myJD-row2 {
+                    height: 116px*$r;
+                    border-bottom: 1px solid #f1f1f1;
+                    padding-left: 17px*$r;
+                    padding-top: 10px*$r;
+                    a {
+                        float: left;
+                        width: 156px*$r;
+                        height: 30px*$r;
+                        color: #999999;
+                        @include hover();
+                    }
+                }
+                .myJD-row2 {
+                    border: 0;
+                }
+            }
+            .enterprise-pull {
+                position: absolute;
+                left: -20px*$r;
+                width: 193px*$r;
+                height: 87px*$r;
+                background-color: #fff;
+                z-index: 5;
+                border: 1px solid #d4d4d4;
+                display: none;
+                .enterprise-row1 {
+                    height: 87px*$r;
+                    padding-left: 19px*$r;
+                    padding-top: 10px*$r;
+                    a {
+                        float: left;
+                        width: 80px*$r;
+                        height: 30px*$r;
+                        color: #999999;
+                        @include hover();
+                    }
+                }
+            }
+            .serve-pull {
+                position: absolute;
+                left: -20px*$r;
+                width: 212px*$r;
+                height: 313px*$r;
+                background-color: #fff;
+                z-index: 5;
+                border: 1px solid #d4d4d4;
+                display: none;
+                .serve-row1,
+                .serve-row2 {
+                    height: 171px*$r;
+                    padding-left: 19px*$r;
+                    border-bottom: 2px dashed #f7f7f7;
+                    p {
+                        color: #808080;
+                        font-size: 14px*$r;
+                        font-weight: bold;
+                        margin-bottom: -5px*$r;
+                    }
+                    a {
+                        float: left;
+                        width: 95px*$r;
+                        height: 30px*$r;
+                        color: #999999;
+                        @include hover();
+                    }
+                }
+                .serve-row2 {
+                    border: 0;
+                    height: 140px*$r;
+                }
+            }
         }
         li:nth-child(even) {
             width: 1px;
@@ -340,19 +479,113 @@ header {
     .main {
         height: 100%;
         .fs-col1 {
+            position: relative;
             float: left;
             width: 237px*$r;
             height: 100%;
             background-color: #fefefe;
             ul {
-                margin-left: 23px*$r;
                 margin-top: 20px*$r;
                 font-size: 14px;
                 li {
-                    margin-bottom: 13px*$r;
+                    padding: 6px*$r 0 6px*$r 23px*$r;
                     a {
                         margin: 0 1px;
                         color: #733333;
+                    }
+                    &:hover {
+                        background-color: #d9d9d9;
+                        .li1 {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .li1 {
+                position: absolute;
+                left: 238px*$r;
+                top: 0px*$r;
+                width: 1236px*$r;
+                height: 589px*$r;
+                background-color: #fff;
+                z-index: 5;
+                display: none;
+                .li1-top {
+                    margin-left: 26px*$r;
+                    margin-top: 26px*$r;
+                    span {
+                        display: inline-block;
+                        font-size: 14px*$r;
+                        color: #fff;
+                        background-color: #333;
+                        padding: 9px*$r 9px*$r 8px*$r 12px*$r;
+                        margin-right: 12px*$r;
+                        cursor: pointer;
+                        &::after {
+                            content: "\e6ab";
+                            @include iconfont();
+                            font-size: 14px*$r;
+                            color: #fff;
+                            margin-left: 8px*$r;
+                        }
+                        &:hover {
+                            background-color: #f00;
+                        }
+                    }
+                }
+                .li1-middle {
+                    margin-left: 26px*$r;
+                    margin-top: 20px*$r;
+                    dl {
+                        float: left;
+                        width: 947px*$r;
+                        margin-bottom: 25px*$r;
+                        dt {
+                            float: left;
+                            text-align: right;
+                            width: 83px*$r;
+                            font-size: 14px*$r;
+                            font-weight: bold;
+                            color: #333;
+                            margin-right: 7px*$r;
+                            &::after {
+                                content: "\e6ab";
+                                @include iconfont();
+                                font-size: 14px*$r;
+                                color: #333;
+                                margin-left: 8px*$r;
+                            }
+                            a {
+                                @include hover();
+                            }
+                        }
+                        dd {
+                            float: left;
+                            margin-left: 17px*$r;
+                            color: #666;
+                            font-size: 14px*$r;
+                            a {
+                                @include hover();
+                            }
+                        }
+                    }
+                }
+                .li1-right {
+                    margin-top: -45px*$r;
+                    .li1-small {
+                        img {
+                            width: 103px*$r;
+                            height: 44px*$r;
+                            &:nth-of-type(2n-1) {
+                                margin-right: -2px*$r;
+                            }
+                        }
+                    }
+                    .li1-big {
+                        img {
+                            width: 208px*$r;
+                            height: 168px*$r;
+                        }
                     }
                 }
             }
