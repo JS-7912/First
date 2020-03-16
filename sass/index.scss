@@ -25,13 +25,102 @@ $r: 0.81; //比例
 @font-face {
     font-family: 'iconfont';
     /* project id 1686766 */
-    src: url('//at.alicdn.com/t/font_1686766_4az501jgu02.eot');
-    src: url('//at.alicdn.com/t/font_1686766_4az501jgu02.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1686766_4az501jgu02.woff2') format('woff2'), url('//at.alicdn.com/t/font_1686766_4az501jgu02.woff') format('woff'), url('//at.alicdn.com/t/font_1686766_4az501jgu02.ttf') format('truetype'), url('//at.alicdn.com/t/font_1686766_4az501jgu02.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_1686766_tsa8zvykqcd.eot');
+    src: url('//at.alicdn.com/t/font_1686766_tsa8zvykqcd.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_1686766_tsa8zvykqcd.woff2') format('woff2'), url('//at.alicdn.com/t/font_1686766_tsa8zvykqcd.woff') format('woff'), url('//at.alicdn.com/t/font_1686766_tsa8zvykqcd.ttf') format('truetype'), url('//at.alicdn.com/t/font_1686766_tsa8zvykqcd.svg#iconfont') format('svg');
 }
 
 .warp {
     background-color: #f4f4f4;
     border-bottom: 1px solid #dedede;
+}
+
+
+/* 下滑搜索框 */
+
+#slide-search {
+    position: fixed;
+    height: 65px*$r;
+    width: 1890px*$r;
+    border-bottom: 2px solid #f00;
+    background-color: #fff;
+    z-index: 10;
+    display: none;
+    img {
+        float: left;
+        width: 125px*$r;
+        height: 40px*$r;
+        margin-left: 20px*$r;
+        margin-top: 10px*$r;
+    }
+    .search-t {
+        padding-left: 300px*$r;
+        padding-top: 10px*$r;
+        &::after {
+            content: "\e60d";
+            @include iconfont();
+            font-size: 20px*$r;
+            color: #ccc;
+            position: absolute;
+            right: 800px*$r;
+            top: 22px*$r;
+            cursor: pointer;
+        }
+        .search-m {
+            float: left;
+            input {
+                width: 605px*$r;
+                height: 44px*$r;
+                border: 3px*$r solid red;
+                &::placeholder {
+                    padding-left: 22px*$r;
+                    color: #9d9d9d;
+                }
+            }
+            button {
+                float: right;
+                width: 73px*$r;
+                height: 44px*$r;
+                background: red;
+                border: 0;
+                margin-left: -4px;
+                &::after {
+                    content: "\e688";
+                    @include iconfont();
+                    color: #fff;
+                    font-size: 15px;
+                }
+            }
+        }
+        .shopcar {
+            position: relative;
+            float: left;
+            width: 165px*$r;
+            height: 45px*$r;
+            line-height: 45px*$r;
+            text-align: center;
+            border: 1px solid #eee;
+            color: red;
+            margin-left: 23px*$r;
+            &::before {
+                content: "\e600";
+                @include iconfont();
+                color: #f00;
+                font-size: 15px;
+                margin-right: 15px;
+            }
+            .count {
+                position: absolute;
+                top: -1px;
+                left: 33px;
+                height: 14px;
+                line-height: 14px;
+                color: #fff;
+                background-color: #e60012;
+                padding: 0 5px;
+                border-radius: 7px 7px 7px 0;
+            }
+        }
+    }
 }
 
 
@@ -120,11 +209,22 @@ header {
         width: 1012px*$r;
         height: 175px*$r;
         .search {
+            position: relative;
             width: 875px*$r;
             height: 70px*$r;
             margin-top: 32px*$r;
             margin-left: 88px*$r;
             .search-t {
+                &::after {
+                    content: "\e60d";
+                    @include iconfont();
+                    font-size: 20px*$r;
+                    color: #ccc;
+                    position: absolute;
+                    right: 288px*$r;
+                    top: 12px*$r;
+                    cursor: pointer;
+                }
                 .search-m {
                     float: left;
                     input {
@@ -137,8 +237,9 @@ header {
                         }
                     }
                     button {
+                        float: right;
                         width: 73px*$r;
-                        height: 45px*$r;
+                        height: 44px*$r;
                         background: red;
                         border: 0;
                         margin-left: -4px;
@@ -514,9 +615,113 @@ header {
 }
 
 
+/* 电梯 */
+
+@mixin a($val,
+$color) {
+    &::before {
+        display: inline-block;
+        content: $val;
+        @include iconfont();
+        font-size: 18px*$r;
+        color: $color;
+        width: 20px*$r;
+        height: 18px*$r;
+    }
+}
+
+.elevator_list {
+    position: absolute;
+    right: 107px*$r;
+    background-color: #fff;
+    width: 73px*$r;
+    height: 420px*$r;
+    text-align: center;
+    ul {
+        margin-top: 1px*$r;
+        li {
+            height: 70px*$r;
+            padding-left: 19px*$r;
+            &::after {
+                content: "";
+                margin-left: -18px*$r;
+                display: inline-block;
+                width: 35px*$r;
+                height: 1px*$r;
+                background-color: #efefef;
+            }
+            &:nth-of-type(5) {
+                a {
+                    @include a("\e756",
+                    #333);
+                }
+                &:hover {
+                    a {
+                        @include a("\e756",
+                        #fff);
+                    }
+                }
+            }
+            &:last-of-type {
+                a {
+                    @include a("\f05c",
+                    #333);
+                }
+                &:hover {
+                    a {
+                        @include a("\f05c",
+                        #fff);
+                    }
+                }
+            }
+            a {
+                color: #333;
+                display: block;
+                width: 36px*$r;
+                height: 56px*$r;
+                padding-top: 10px*$r;
+                line-height: 24px*$r;
+                font-size: 18px*$r;
+            }
+            &:hover {
+                background-color: #f00;
+                &::after {
+                    content: "";
+                    height: 1px*$r;
+                    background-color: #f00;
+                }
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    #elevator_totop {
+        width: 73px*$r;
+        height: 75px*$r;
+        background-color: #fff;
+        display: none;
+        a {
+            &::before {
+                display: inline-block;
+                content: "\e62c";
+                @include iconfont();
+                font-size: 18px*$r;
+            }
+            display: block;
+            width: 36px*$r;
+            color: #f00;
+            font-size: 18px*$r;
+            margin-left: 19px*$r;
+            padding-top: 20px*$r;
+        }
+    }
+}
+
+
 /* 秒杀模块 */
 
-.seckill {
+#seckill {
     background-color: #fff;
     height: 325px*$r;
     margin-bottom: 25px*$r;
@@ -666,7 +871,7 @@ header {
 
 /* 特色选购模块  */
 
-.feature {
+#feature {
     height: 425px*$r;
     .fea-row1 {
         width: 737px*$r;
@@ -733,7 +938,7 @@ header {
 
 /* 频道广场 */
 
-.square {
+#square {
     position: relative;
     >img {
         &:first-of-type {
@@ -812,7 +1017,7 @@ header {
 
 /* 为你推荐模块 */
 
-.recommend {
+#recommend {
     .rec-header {
         position: relative;
         img {

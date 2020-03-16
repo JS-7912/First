@@ -13,8 +13,24 @@
     </style>
 </head>
 
-<body>
+<body id="body">
     <div class="warp clearfix">
+        <!-- 下滑搜索框，开始隐藏 -->
+        <div id="slide-search">
+            <div class="w">
+                <a href="#"><img src="img/reg-logo.png" alt=""></a>
+                <div class="search-t">
+                    <div class="search-m">
+                        <input type="search" name="" id="" placeholder="Dangerous people手环">
+                        <button></button>
+                    </div>
+                    <div class="shopcar">我的购物车
+                        <i class="count">0</i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
         <!-- 快捷导航模块 -->
         <nav>
             <div class="top">
@@ -58,17 +74,17 @@
         <header class="clearfix">
             <div class="w">
                 <div class="logo">
-                    <img src="img/head_dog.png" alt="">
+                    <a href="#"><img src="img/head_dog.png" alt=""></a>
                 </div>
                 <div class="centre-h">
                     <div class="search">
                         <div class="search-t">
                             <div class="search-m">
-                                <input type="search" name="" id="" placeholder="九牧马桶">
+                                <input type="search" name="" id="" placeholder="全棉时代湿巾">
                                 <button></button>
                             </div>
                             <div class="shopcar">我的购物车
-                                <i class="count">8</i>
+                                <i class="count">0</i>
                             </div>
                             <div class="search-b">
                                 <a href="#" class="sty_red">品质生活节</a>
@@ -210,8 +226,21 @@
 
         </div>
 
+        <!-- 电梯 -->
+        <div class="elevator_list">
+            <ul>
+                <li><a href="#seckill">京东秒杀</a></li>
+                <li><a href="#feature">特色优选</a></li>
+                <li><a href="#square">频道广场</a></li>
+                <li><a href="#recommend">为你推荐</a></li>
+                <li><a href="#">客服</a></li>
+                <li><a href="#">反馈</a></li>
+            </ul>
+            <div id="elevator_totop"><a href="#body">顶部</a></div>
+        </div>
+
         <!-- 秒杀模块 -->
-        <div class="seckill w">
+        <div id="seckill" class="w">
             <div class="sk-row1">
                 <p>京东秒杀</p>
                 <img src="img/sk-img.png" alt="">
@@ -231,7 +260,7 @@
         </div>
 
         <!-- 特色选购模块 -->
-        <div class="feature w">
+        <div id="feature" class="w">
             <div class="fea-row1">
                 <p><a href="#">每日特价</a></p>
                 <img src="img/fea-img.png" alt="">
@@ -259,7 +288,7 @@
         </div>
 
         <!-- 频道广场 -->
-        <div class="square w clearfix">
+        <div id="square" class="w clearfix">
             <img src="img/nav-left.png" alt="">
             <span>频道广场</span>
             <img src="img/nav-right.png" alt="">
@@ -365,7 +394,7 @@
         </div>
 
         <!-- 为你推荐模块 -->
-        <div class="recommend w clearfix">
+        <div id="recommend" class="w clearfix">
             <div class="rec-header">
                 <img src="img/nav-left.png" alt="">
                 <span>为你推荐</span>
@@ -421,6 +450,7 @@
             </div>
         </div>
     </div>
+    <!-- 尾部 -->
     <footer class="footer">
         <div class="w">
             <dl>
@@ -470,7 +500,6 @@
                 <a href="#">查看详情></a>
             </dl>
         </div>
-        <!-- 尾部 -->
         <div class="footers w">
             <div class="links">
                 <ul>

@@ -88,6 +88,61 @@ $(function() {
         $(".top").remove();
     })
 
+    //用来查询自己的商品 把数据传递给前端,插入到页面
+    $.get("http://jx.xuzhixiang.top/ap/api/productlist.php", {
+        uid: "33192"
+    }).then(data => {
+        data = data.data;
+        var str = "";
+        var str1 = "";
+        $.each(data, function(n, val) {
+            str += "<div>" + "<img src=" + val.pimg + ">" + "<p>" + val.pname + "</p>" + "<span>" + "￥" + val.pprice + "</span>" + "</div>";
+        })
+        $(".sk-row2").append($(str));
+        $.each(data, function(n, val) {
+            str1 += "<div>" + "<img src=" + val.pimg + ">" + "<p>" + val.pname + "</p>" + "<i>" + "￥" + "</i>" + "<span>" + val.pprice + "</span>" + "</div>";
+        })
+        $(".rec-like").append($(str1));
+    });
+
+    //电梯实现
+    $(window).scroll(function() {
+        var topScroll = $(window).scrollTop(); //滑轮距离页面顶部距离
+        var topPin = $('#seckill').offset().top; //电梯距离页面顶部距离
+
+        if (topScroll > topPin) {
+            $(".elevator_list").css({ "top": topScroll + 80 });
+            $("#elevator_totop").slideDown();
+            $("#slide-search").slideDown();
+        } else {
+            $(".elevator_list").css({ "top": topPin });
+            $("#elevator_totop").slideUp();
+            $("#slide-search").slideUp();
+        }
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -102,24 +157,6 @@ $(function() {
             console.log(data);
 
         })*/
-    //用来查询自己的商品 把数据传递给前端
-    $.get("http://jx.xuzhixiang.top/ap/api/productlist.php", {
-        uid: "33192"
-    }).then(data => {
-
-        data = data.data;
-        var str = "";
-        var str1 = "";
-        $.each(data, function(n, val) {
-            str += "<div>" + "<img src=" + val.pimg + ">" + "<p>" + val.pname + "</p>" + "<span>" + "￥" + val.pprice + "</span>" + "</div>";
-        })
-        $(".sk-row2").append($(str));
-        $.each(data, function(n, val) {
-            str1 += "<div>" + "<img src=" + val.pimg + ">" + "<p>" + val.pname + "</p>" + "<i>" + "￥" + "</i>" + "<span>" + val.pprice + "</span>" + "</div>";
-        })
-        $(".rec-like").append($(str1));
-    })
-
     /* //用来插入商品数据
       $.post("http://jx.xuzhixiang.top/ap/api/goods/goods-add.php", {
           pname: "洗衣机置物架翻盖波轮洗衣机架落地卫生间马桶置物架子阳台收纳架 B款 白枫色+白架",
